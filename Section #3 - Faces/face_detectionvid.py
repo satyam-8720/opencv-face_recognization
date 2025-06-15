@@ -1,6 +1,6 @@
 import cv2 as cv
 
-# Load Haar cascade only once
+
 haar_cascade = cv.CascadeClassifier("haar_cascade.xml")
 
 # Open webcam
@@ -8,7 +8,6 @@ vid = cv.VideoCapture(0)
 
 while True:
     isTrue, frame = vid.read()
-
     if not isTrue:
         print("Failed to grab frame.")
         break
@@ -28,6 +27,5 @@ while True:
     if cv.waitKey(20) & 0xFF == ord('d'):
         break
 
-# Release resources
 vid.release()
 cv.destroyAllWindows()
